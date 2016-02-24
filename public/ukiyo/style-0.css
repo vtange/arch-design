@@ -65,78 +65,25 @@ a{
   text-align: center;
 }
 .box {
-  display:inline-block;
-  width: 45%;
-  padding: 5%;
+  position: fixed;
+  right:10%;
+  top:10%;
+  width: 400px;
+  padding: 30px;
   border-radius: 5px;
   background: rgba(240,230,220, .7);
   box-shadow: 0 0 8px rgba(0, 0, 0, .7);
+	z-index: 2;
 }
 .box p{
-  line-height: 1.5em;
+  line-height: 1.35em;
 }
 .box h3{
-  font-size: 1.5em;
-}
-.circle {
-  display:inline-block;
-  position:relative;
-  left:10%;
-  margin-bottom:150px;
-  width: 320px;
-  height: 320px;
-  border-radius: 500px;
-  background: url("http://vtang.smalldel.com/wp-content/uploads/2015/04/1403760_10202784694231965_8598438404256207922_o.jpg");
-  background-position: center;
-  background-size: contain;
-  box-shadow: 0 0 8px rgba(0, 0, 0, .7);
+  font-size: 1.35em;
 }
 
 .row {
     margin-top:1.5em;
-}
-.gal-box{
-    box-sizing: border-box;
-    min-height:30vh;
-    font-size:2em;
-    text-align:center;
-    color:white;
-    background: rgba(20,20,20, .7);
-}
-.gal-box p{
-    font-size:.8em;
-    font-style:italic;
-}
-.email-info{
-    display:inline-block;
-}
-
-.links2 {
-  margin-bottom:0;
-}
-.links2 li {
- background-color:#bbb;
- border:2px outset black;
- border-radius:10px;
- padding:4px 15px 4px 15px;
- letter-spacing:0.2em;
- display:inline-block;
- box-shadow:2px 2px 2px;
-}
-.links3 {
-  position: absolute;
-  top:10%;
-  left:60%;
-}
-.links3 li {
- background-color:#bbb;
- border:2px outset black;
- border-radius:10px;
- padding:4px 15px 4px 15px;
- margin-top:1.5em;
- letter-spacing:0.2em;
- display:block;
- box-shadow:2px 2px 2px;
 }
 #slide1 h1{
     color: #bbb;
