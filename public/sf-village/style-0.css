@@ -3,48 +3,6 @@
 body{
     font-family: CabinMed;
 }
-.link {
-    cursor:pointer;
-}
-/*_____________HEADER_________*/
-a{
-  color:black;
-}
-.header {
-  position:fixed;
-  top:0;
-  left:0;
-  margin:auto;
-  width:100%;
-  height:auto;
-  background-color:#bbb;
-  border-bottom:1px solid #888;
-  box-shadow:.5px .5px 2px;
-  z-index:5;
-}
-.header_link {
-  display:inline-block;
-  padding:4px 15px 4px 15px;
-  border-bottom:1.5px solid #888;
-}
-.title {
-  position:relative;
-  left:0%;
-}
-.links {
-  margin-bottom:0;
-  float:right;
-  margin-right:-15px;
-}
-.links li {
- display:inline-block;
-}
-.header li a{
- margin-left:-4px;
- background-color:#aaa;
-}
-/*_____________HEADER_________*/
-
 .slide:before {
   content: "";
   position: absolute;
@@ -58,7 +16,6 @@ a{
   box-sizing: border-box;
   padding: 25vh 10%;
   min-height: 100vh;
-  width: 100vw;
   transform-style: inherit;
 }
 .centered-text{
