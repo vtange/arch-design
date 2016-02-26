@@ -16,16 +16,18 @@ body{
   box-sizing: border-box;
   padding: 25vh 10%;
   min-height: 100vh;
-
   transform-style: inherit;
+  box-shadow: 0.25em 0em 0.5em 0.5em rgba(0,0,0,0.35);
 }
 .centered-text{
   text-align: center;
 }
-.box {
-  position: fixed;
-  right:10%;
+.desc-container{
+  position: absolute;
+  left:10%;
   top:10%;
+}
+.box {
   width: 400px;
   padding: 30px;
   border-radius: 5px;
@@ -49,13 +51,8 @@ body{
     text-shadow: 2px 1.5px 1px #000;
 }
 #slide1 h4{
-    color: #000;
+	color: #bbb;
     font-size:1.75em;
-    text-shadow: 1px 1px 1px #000;
-}
-h5{
-    color: #000;
-    font-size:1.35em;
     text-shadow: 1px 1px 1px #000;
 }
 #slide1:before {
@@ -63,7 +60,7 @@ h5{
         url("http://res.cloudinary.com/dmj8qtant/image/upload/v1456476049/roomNposter_night2_cfo6hb.jpg");
     background-repeat: no-repeat;
     background-size:cover;
-    background-position: center;
+    background-position: right;
     background-attachment: fixed;
     transform: translateZ(-1px) scale(1);
     z-index:-1;
@@ -73,11 +70,8 @@ h5{
     background:url("http://res.cloudinary.com/dmj8qtant/image/upload/v1456476070/elevator_mr10ao.jpg");
     background-repeat: no-repeat;
     background-size:cover;
-    background-position: center;
+    background-position: left;
     background-attachment: fixed;
-}
-#slide3 .centered-text{
-    color: #000;
 }
 #slide3:before {
     background:url("http://res.cloudinary.com/dmj8qtant/image/upload/v1456476080/44159284type1_2016_nqt4gl.jpg");
@@ -87,9 +81,6 @@ h5{
     background-attachment: fixed;
   transform: translateZ(-1px) scale(1);
   z-index:-1;
-}
-#slide4 .text{
-    color: #000;
 }
 #slide4 {
     background:url("https://41.media.tumblr.com/eb2382a5a4c996cfdab27bc0d1eb51ff/tumblr_nt5umxS1FY1ud7rr3o1_1280.jpg");
