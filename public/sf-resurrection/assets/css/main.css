@@ -1252,3 +1252,7 @@
 	cursor:pointer;
 	border-bottom:2px solid magenta;
 }
+
+.hidden {
+	display: none;
+}

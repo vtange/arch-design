@@ -382,6 +382,17 @@ var main = (function($) { var _ = {
 
 			});
 
+		// Menu Items clicks.
+			_.$menu_home.on("click",function(){
+				_.$menu_select("home");
+			});
+			_.$menu_process.on("click",function(){
+				_.$menu_select("process");
+			});
+			_.$menu_plans.on("click",function(){
+				_.$menu_select("plans");
+			});
+		
 	},
 
 	/**
@@ -771,16 +782,25 @@ var main = (function($) { var _ = {
 	 * Home / Process / Plans Menu Control.
 	 */
 	// Model: manages if active menu-item is what's active already.
-	menuIsOn: "Home",
+	menuIsOn: "home",
 	// Replace with a getElementbyClassName search and getting innerHTML later
-	menuOptions: ["Home", "Process", "Plans"],
+	menuOptions: ["home", "process", "plans"],
 	$menu_home:$("#home-link"),
 	$menu_process:$("#process-link"),
 	$menu_plans:$("#plans-link"),
 	$menu_select: function(menu_item){
-		
+		_.menuIsOn = menu_item;
+		if(menu_item === "home"){
+			_.$thumbnails = $('#thumbnails');
+		}
+		else{
+			console.log(_.menuIsOn);
+			console.log(document.getElementById("thumbnails"+_.menuOptions.indexOf(menu_item)));
+			_.$thumbnails = $('#thumbnails'+_.menuOptions.indexOf(menu_item));
+			document.getElementById("thumbnails"+_.menuOptions.indexOf(menu_item)).classList.remove('hidden');
+		}
+		_.initViewer();
 	},
-	
 	
 	
 }; return _; })(jQuery); main.init();
