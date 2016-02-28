@@ -789,15 +789,26 @@ var main = (function($) { var _ = {
 	$menu_process:$("#process-link"),
 	$menu_plans:$("#plans-link"),
 	$menu_select: function(menu_item){
+		if(_.menuIsOn === menu_item){
+			return;
+		}
 		_.menuIsOn = menu_item;
 		if(menu_item === "home"){
+			//slide down
 			_.$thumbnails = $('#thumbnails');
+			_.$thumbnails.slideDown('slow');
+			
+			//slide others back up
+			$('#thumbnails1').slideUp('slow');
+			$('#thumbnails2').slideUp('slow');
 		}
 		else{
-			console.log(_.menuIsOn);
-			console.log(document.getElementById("thumbnails"+_.menuOptions.indexOf(menu_item)));
+			//slide down
 			_.$thumbnails = $('#thumbnails'+_.menuOptions.indexOf(menu_item));
-			document.getElementById("thumbnails"+_.menuOptions.indexOf(menu_item)).classList.remove('hidden');
+			_.$thumbnails.slideDown('slow');
+			
+			//slide others back up
+			
 		}
 		_.initViewer();
 	},
