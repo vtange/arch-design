@@ -786,6 +786,7 @@ var main = (function($) { var _ = {
 	menuIsOn: "home",
 	// Replace with a getElementbyClassName search and getting innerHTML later
 	menuOptions: ["home", "process", "plans"],
+	menuThumbs: ["#thumbnails", "#thumbnails1", "#thumbnails2"],
 	$menu_home:$("#home-link"),
 	$menu_process:$("#process-link"),
 	$menu_plans:$("#plans-link"),
@@ -800,8 +801,7 @@ var main = (function($) { var _ = {
 			_.$thumbnails.slideDown('slow');
 			
 			//slide others back up
-			$('#thumbnails1').slideUp('slow');
-			$('#thumbnails2').slideUp('slow');
+			_.$menu_condense(menu_item);
 		}
 		else{
 			//slide down
@@ -809,10 +809,18 @@ var main = (function($) { var _ = {
 			_.$thumbnails.slideDown('slow');
 			
 			//slide others back up
-			
+			_.$menu_condense(menu_item);
 		}
 		_.initViewer();
 	},
+	$menu_condense: function(menu_item){
+			//slide non-selected
+			_.menuThumbs.filter(function(item){
+				return item !== _.menuThumbs[_.menuOptions.indexOf(menu_item)];
+			}).forEach(function(element){
+				$(element).slideUp('slow');
+			})
+	}
 	
 	
 }; return _; })(jQuery); main.init();
