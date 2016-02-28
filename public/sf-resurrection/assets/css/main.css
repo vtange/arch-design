@@ -877,7 +877,7 @@
 			}
 
 				#thumbnails article .thumbnail img , #thumbnails1 article .thumbnail img , #thumbnails2 article .thumbnail img {
-					display: block;
+					display: none;
 					width: 100%;
 				}
 
