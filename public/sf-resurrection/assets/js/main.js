@@ -512,7 +512,8 @@ var main = (function($) { var _ = {
 			_.initProperties();
 			_.initViewer();
 			_.initEvents();
-
+			$('#thumbnails1').slideUp('slow');
+			$('#thumbnails2').slideUp('slow');
 		// Initial slide.
 			window.setTimeout(function() {
 
