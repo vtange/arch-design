@@ -495,7 +495,8 @@ var main = (function($) { var _ = {
 	 * Set-up Thumbnail Background Image 
 	 */
 				// Thumbs.
-				$('#thumbnails').children('article').each(function() {
+		$(".menu-item").children('section').each(function(){
+				$(this).children('article').each(function() {
 
 					var	$this = $(this),
 						$image = $this.find('.thumbnail'), $image_img = $image.children('img'),
@@ -530,6 +531,7 @@ var main = (function($) { var _ = {
 								});
 
 				});
+		});
 		
 		
 		// IE<10: Zero out transition delays.
