@@ -555,8 +555,8 @@ var main = (function($) { var _ = {
 			_.initProperties();
 			_.initViewer();
 			_.initEvents();
-			$('#thumbnails1').slideUp('slow');
-			$('#thumbnails2').slideUp('slow');
+			_.$menu_condense(_.menuIsOn);
+		
 		// Initial slide.
 			window.setTimeout(function() {
 
@@ -842,7 +842,7 @@ var main = (function($) { var _ = {
 		if(menu_item === "home"){
 			//slide down
 			_.$thumbnails = $('#thumbnails');
-			_.$thumbnails.slideDown('slow');
+			_.$thumbnails.parent().slideDown('slow');
 			
 			//slide others back up
 			_.$menu_condense(menu_item);
@@ -850,7 +850,7 @@ var main = (function($) { var _ = {
 		else{
 			//slide down
 			_.$thumbnails = $('#thumbnails'+_.menuOptions.indexOf(menu_item));
-			_.$thumbnails.slideDown('slow');
+			_.$thumbnails.parent().slideDown('slow');
 			
 			//slide others back up
 			_.$menu_condense(menu_item);
@@ -862,7 +862,7 @@ var main = (function($) { var _ = {
 			_.menuThumbs.filter(function(item){
 				return item !== _.menuThumbs[_.menuOptions.indexOf(menu_item)];
 			}).forEach(function(element){
-				$(element).slideUp('slow');
+				$(element).parent().slideUp('slow');
 			})
 	}
 	
