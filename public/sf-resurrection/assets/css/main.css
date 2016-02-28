@@ -860,8 +860,11 @@
 		#thumbnails article, #thumbnails1 article, #thumbnails2 article {
 			position: relative;
 			width: 50%;
+			height:6em;
 			background: #101010;
 			outline: 0;
+			
+			background-size: cover;
 		}
 
 			#thumbnails article .thumbnail, #thumbnails1 article .thumbnail, #thumbnails2 article .thumbnail {
@@ -870,6 +873,7 @@
 				position: relative;
 				border: 0;
 				outline: 0;
+				height:100%;
 			}
 
 				#thumbnails article .thumbnail img , #thumbnails1 article .thumbnail img , #thumbnails2 article .thumbnail img {

@@ -490,7 +490,48 @@ var main = (function($) { var _ = {
 	 * Initialize stuff.
 	 */
 	init: function() {
+		
+	/**
+	 * Set-up Thumbnail Background Image 
+	 */
+				// Thumbs.
+				$('#thumbnails').children('article').each(function() {
 
+					var	$this = $(this),
+						$image = $this.find('.thumbnail'), $image_img = $image.children('img'),
+						x;
+
+					// No image? Bail.
+						if ($image.length == 0)
+							return;
+
+					// Image.
+					// This sets the background of the "image" <span> to the image pointed to by its child
+					// <img> (which is then hidden). Gives us way more flexibility.
+
+						// Set background.
+							$this.css('background-image', 'url(' + $image_img.attr('src') + ')');
+
+						// Set background position.
+							if (x = $image_img.data('position'))
+								$this.css('background-position', x);
+
+						// Hide original img.
+							$image_img.hide();
+
+					// Hack: IE<11 doesn't support pointer-events, which means clicks to our image never
+					// land as they're blocked by the thumbnail's caption overlay gradient. This just forces
+					// the click through to the image.
+						if (skel.vars.IEVersion < 11)
+							$this
+								.css('cursor', 'pointer')
+								.on('click', function() {
+									$image.trigger('click');
+								});
+
+				});
+		
+		
 		// IE<10: Zero out transition delays.
 			if (skel.vars.IEVersion < 10) {
 
@@ -763,7 +804,7 @@ var main = (function($) { var _ = {
 			_.$body.addClass('fullscreen');
 
 		// Blur.
-			_.$main.blur();
+		//	_.$main.blur();
 
 	},
 
@@ -778,7 +819,8 @@ var main = (function($) { var _ = {
 			_.hide();
 
 	},
-
+	
+	
 	/**
 	 * Home / Process / Plans Menu Control.
 	 */
