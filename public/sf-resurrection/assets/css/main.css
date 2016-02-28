@@ -843,7 +843,7 @@
 
 /* Thumbnails */
 
-	#thumbnails {
+	#thumbnails, #thumbnails1, #thumbnails2 {
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
@@ -855,14 +855,14 @@
 		padding: 0 0.75em;
 	}
 
-		#thumbnails article {
+		#thumbnails article, #thumbnails1 article, #thumbnails2 article {
 			position: relative;
 			width: 50%;
 			background: #101010;
 			outline: 0;
 		}
 
-			#thumbnails article .thumbnail {
+			#thumbnails article .thumbnail, #thumbnails1 article .thumbnail, #thumbnails2 article .thumbnail {
 				-webkit-tap-highlight-color: transparent;
 				display: block;
 				position: relative;
@@ -870,7 +870,7 @@
 				outline: 0;
 			}
 
-				#thumbnails article .thumbnail img {
+				#thumbnails article .thumbnail img , #thumbnails1 article .thumbnail img , #thumbnails2 article .thumbnail img {
 					display: block;
 					width: 100%;
 				}
