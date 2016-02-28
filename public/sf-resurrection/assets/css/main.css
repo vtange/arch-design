@@ -113,7 +113,7 @@
 
 	body {
 		background-color: #fff;
-		color: #aaa;
+		color: #ddd;
 	}
 
 	body, input, select, textarea {
@@ -121,7 +121,7 @@
 		font-weight: 400;
 		line-height: 1.65;
 		font-size: 1em;
-		color: #aaa;
+		color: #ddd;
 	}
 
 	a {
@@ -156,7 +156,7 @@
 		font-weight: 400;
 		line-height: 1.25;
 		margin: 0 0 0.5em 0;
-		color: #555;
+		color: #ddd;
 	}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -719,7 +719,6 @@
 		top: 0;
 		width: 22.5em;
 		height: 100%;
-		background: #fff;
 		outline: 0;
 		overflow-x: hidden;
 		overflow-y: auto;
@@ -727,6 +726,9 @@
 		visibility: visible;
 		z-index: 10000;
 		right: 0;
+		box-shadow: 0em 1em 1em 0em black;
+		
+		background: -moz-linear-gradient(-45deg, rgba(48,34,35,1) 0%, rgba(40,30,30,1) 44%,  rgba(40,30,30,1) 100%);
 	}
 
 		#main .toggle {
@@ -1250,5 +1252,5 @@
 	margin: auto;
 	margin-bottom: 1em;
 	cursor:pointer;
-	border-bottom:2px solid magenta;
+	border-bottom:2px solid rgba(20,10,10,1);
 }
