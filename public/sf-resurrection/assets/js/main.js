@@ -13,7 +13,7 @@ var main = (function($) { var _ = {
 	settings: {
 
 		// Preload all images.
-			preload: false,
+		//	preload: false,
 
 		// Slide duration (must match "duration.slide" in _vars.scss).
 			slideDuration: 500,
@@ -152,6 +152,7 @@ var main = (function($) { var _ = {
 						'<div class="nav-next"></div>' +
 						'<div class="nav-previous"></div>' +
 						'<div class="toggle"></div>' +
+						'<div id="capt"></div>' +
 					'</div>' +
 				'</div>'
 			).appendTo(_.$body);
@@ -447,12 +448,12 @@ var main = (function($) { var _ = {
 	 						s.$slide = $('<div class="slide"><div class="caption"></div><div class="image"></div></div>');
 
 	 					// Image.
- 							s.$slideImage = s.$slide.children('.image');
+ 						//	s.$slideImage = s.$slide.children('.image');
 
  							// Set background stuff.
-	 							s.$slideImage
-		 							.css('background-image', '')
-		 							.css('background-position', ($thumbnail.data('position') || 'center'));
+	 					//		s.$slideImage
+		 				//			.css('background-image', '')
+		 				//			.css('background-position', ($thumbnail.data('position') || 'center'));
 
 						// Caption.
 							s.$slideCaption = s.$slide.find('.caption');
@@ -462,20 +463,20 @@ var main = (function($) { var _ = {
 									.appendTo(s.$slideCaption);
 
 					// Preload?
-						if (_.settings.preload) {
+					//	if (_.settings.preload) {
 
 							// Force image to download.
-								var $img = $('<img src="' + s.url + '" />');
+					//			var $img = $('<img src="' + s.url + '" />');
 
 							// Set slide's background image to it.
-								s.$slideImage
-									.css('background-image', 'url(' + s.url + ')');
+					//			s.$slideImage
+					//				.css('background-image', 'url(' + s.url + ')');
 
 							// Mark slide as loaded.
-								s.$slide.addClass('loaded');
-								s.loaded = true;
+					//			s.$slide.addClass('loaded');
+					//			s.loaded = true;
 
-						}
+					//	}
 
 					// Add to slides array.
 						_.slides.push(s);
@@ -634,8 +635,8 @@ var main = (function($) { var _ = {
 
 					// Attach new slide.
 					//	newSlide.$slide.appendTo(_.$viewer);
-					
 						$('#viewer').css('background-image', 'url(' + newSlide.url + ')');
+						document.getElementById('capt').innerHTML = newSlide.$slideCaption.prevObject[0].innerText;
 					// New slide not yet loaded?
 						if (!newSlide.loaded) {
 								// Wait for it to load.
