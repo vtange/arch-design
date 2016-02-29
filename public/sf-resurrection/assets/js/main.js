@@ -775,7 +775,7 @@ var main = (function($) { var _ = {
 	 * Shows the main wrapper.
 	 */
 	show: function() {
-
+		$('#viewer').animate({ width: '73.5%' }, 1000, 'linear');
 		// Already visible? Bail.
 			if (!_.$body.hasClass('fullscreen'))
 				return;
@@ -792,7 +792,7 @@ var main = (function($) { var _ = {
 	 * Hides the main wrapper.
 	 */
 	hide: function() {
-
+			$('#viewer').animate({ width: '100%' }, 400, 'linear');
 		// Already hidden? Bail.
 			if (_.$body.hasClass('fullscreen'))
 				return;
