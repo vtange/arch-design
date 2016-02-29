@@ -634,22 +634,14 @@ var main = (function($) { var _ = {
 
 					// Attach new slide.
 					//	newSlide.$slide.appendTo(_.$viewer);
-
-					$('#viewer').fadeTo('slow', 0.3, function(){
-						$(this).css('background-image', 'url(' + newSlide.url + ')');
-					}).fadeTo('slow',1);
+					
+						$('#viewer').css('background-image', 'url(' + newSlide.url + ')');
 					// New slide not yet loaded?
 						if (!newSlide.loaded) {
-
-							window.setTimeout(function() {
-
-								// Mark as loading.
-								//	newSlide.$slide.addClass('loading');
-
 								// Wait for it to load.
 									$('<img src="' + newSlide.url + '" />').on('load', function() {
 									//window.setTimeout(function() {
-
+										
 										// Set background image.
 										//	newSlide.$slideImage
 										//		.css('background-image', 'url(' + newSlide.url + ')');
@@ -661,48 +653,41 @@ var main = (function($) { var _ = {
 										// Mark as active.
 										//	newSlide.$slide.addClass('active');
 
-										// Unlock.
-											window.setTimeout(function() {
+										// Unlock. and Opacity up.
+											//window.setTimeout(function() {
 												_.locked = false;
-											}, 100);
+												$('#viewer').animate({ opacity: 1 }, 500, 'linear');
+											//}, 100);
 
 									//}, 1000);
 									});
-
-							}, 100);
-
 						}
 
 					// Otherwise ...
 						else {
 
-							window.setTimeout(function() {
-
 								// Mark as active.
 								//	newSlide.$slide.addClass('active');
 
-								// Unlock.
-									window.setTimeout(function() {
+								// Unlock. and Opacity up.
+									//window.setTimeout(function() {
 										_.locked = false;
-									}, 100);
-
-							}, 100);
+										$('#viewer').animate({ opacity: 1 }, 500, 'linear');
+									//}, 100);
 
 						}
 
 				};
-				var fb = function(){
-					$('#viewer').fadeTo('slow', 0.3, function(){
-						$(this).css('background-image', 'black');
-					}).fadeTo('slow',1);
+				var fb = function(followUpFunction){
+						$('#viewer').animate({ opacity: 0 }, 500, 'linear').promise().always(function(){followUpFunction();});
 				}
 				// No old slide? Switch immediately.
 					if (!oldSlide)
 						(f)();
 
-				// Otherwise, wait for old slide to disappear first.
+				// Otherwise, fade to black, then fade to image
 					else
-						window.setTimeout(f, _.settings.slideDuration);
+						fb(f);
 
 	},
 

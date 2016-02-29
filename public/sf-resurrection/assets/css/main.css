@@ -988,15 +988,14 @@
 	}
 
 	#viewer {
-		-moz-transition: opacity 0.75s ease, width 0.75s ease;
-		-webkit-transition: opacity 0.75s ease, width 0.75s ease;
-		-ms-transition: opacity 0.75s ease, width 0.75s ease;
-		transition: opacity 0.75s ease, width 0.75s ease;
 		position: absolute;
 		top: 0;
 		width: calc(100% - 22.5em);
 		height: 100%;
 		left: 0;
+		
+		background-size: cover;
+		background-position: center;
 	}
 
 		#viewer .inner {
