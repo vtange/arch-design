@@ -629,34 +629,37 @@ var main = (function($) { var _ = {
 				var f = function() {
 
 					// Old slide exists? Detach it.
-						if (oldSlide)
-							oldSlide.$slide.detach();
+					//	if (oldSlide)
+					//		oldSlide.$slide.detach();
 
 					// Attach new slide.
-						newSlide.$slide.appendTo(_.$viewer);
+					//	newSlide.$slide.appendTo(_.$viewer);
 
+					$('#viewer').fadeTo('slow', 0.3, function(){
+						$(this).css('background-image', 'url(' + newSlide.url + ')');
+					}).fadeTo('slow',1);
 					// New slide not yet loaded?
 						if (!newSlide.loaded) {
 
 							window.setTimeout(function() {
 
 								// Mark as loading.
-									newSlide.$slide.addClass('loading');
+								//	newSlide.$slide.addClass('loading');
 
 								// Wait for it to load.
 									$('<img src="' + newSlide.url + '" />').on('load', function() {
 									//window.setTimeout(function() {
 
 										// Set background image.
-											newSlide.$slideImage
-												.css('background-image', 'url(' + newSlide.url + ')');
+										//	newSlide.$slideImage
+										//		.css('background-image', 'url(' + newSlide.url + ')');
 
 										// Mark as loaded.
-											newSlide.loaded = true;
-											newSlide.$slide.removeClass('loading');
+										//	newSlide.loaded = true;
+										//	newSlide.$slide.removeClass('loading');
 
 										// Mark as active.
-											newSlide.$slide.addClass('active');
+										//	newSlide.$slide.addClass('active');
 
 										// Unlock.
 											window.setTimeout(function() {
@@ -676,7 +679,7 @@ var main = (function($) { var _ = {
 							window.setTimeout(function() {
 
 								// Mark as active.
-									newSlide.$slide.addClass('active');
+								//	newSlide.$slide.addClass('active');
 
 								// Unlock.
 									window.setTimeout(function() {
@@ -688,7 +691,11 @@ var main = (function($) { var _ = {
 						}
 
 				};
-
+				var fb = function(){
+					$('#viewer').fadeTo('slow', 0.3, function(){
+						$(this).css('background-image', 'black');
+					}).fadeTo('slow',1);
+				}
 				// No old slide? Switch immediately.
 					if (!oldSlide)
 						(f)();
