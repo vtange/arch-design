@@ -1,7 +1,5 @@
 /*features Pure CSS Parallax Scrolling by Keith Clark at http://codepen.io/keithclark/pen/JycFw   , modified to suit uses*/
-@font-face { font-family: CabinMed; src: url('Cabin-Medium-TTF.ttf'); }
 body{
-    font-family: CabinMed;
 }
 .slide:before {
   content: "";
