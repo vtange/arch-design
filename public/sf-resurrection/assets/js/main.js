@@ -839,22 +839,15 @@ var main = (function($) { var _ = {
 			return;
 		}
 		_.menuIsOn = menu_item;
-		if(menu_item === "home"){
-			//slide down
-			_.$thumbnails = $('#thumbnails');
-			_.$thumbnails.parent().slideDown('slow');
-			
-			//slide others back up
-			_.$menu_condense(menu_item);
-		}
-		else{
-			//slide down
-			_.$thumbnails = $('#thumbnails'+_.menuOptions.indexOf(menu_item));
-			_.$thumbnails.parent().slideDown('slow');
-			
-			//slide others back up
-			_.$menu_condense(menu_item);
-		}
+		//slide down
+		_.$thumbnails = $(_.menuThumbs[_.menuOptions.indexOf(menu_item)]);
+		_.$thumbnails.parent().slideDown('fast').promise().always(function(){
+			//after slide down, fade thumbnails in
+			_.$thumbnails.animate({ opacity: 1 });
+		});
+		
+		//slide others back up
+		_.$menu_condense(menu_item);
 		_.initViewer();
 	},
 	$menu_condense: function(menu_item){
@@ -862,7 +855,10 @@ var main = (function($) { var _ = {
 			_.menuThumbs.filter(function(item){
 				return item !== _.menuThumbs[_.menuOptions.indexOf(menu_item)];
 			}).forEach(function(element){
-				$(element).parent().slideUp('slow');
+				$(element).animate({ opacity: 0 }).promise().always(function(){
+					//after fade thumbnails out, slide parent up
+					$(element).parent().slideUp('fast');
+				});;
 			})
 	}
 	
