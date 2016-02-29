@@ -401,8 +401,8 @@ var main = (function($) { var _ = {
 	initViewer: function() {
 
 		// Bind thumbnail click event.
-			_.$thumbnails
-				.on('click', '.thumbnail', function(event) {
+			$(".menu-item").children('section').each(function(){
+				$(this).on('click', '.thumbnail', function(event) {
 
 					var $this = $(this);
 
@@ -418,10 +418,11 @@ var main = (function($) { var _ = {
 						_.switchTo($this.data('index'));
 
 				});
+			});
 
 		// Create slides from thumbnails.
-			_.$thumbnails.children()
-				.each(function() {
+		$(".menu-item").children('section').each(function(){
+				$(this).children('article').each(function() {
 
 					var	$this = $(this),
 						$thumbnail = $this.children('.thumbnail'),
@@ -483,6 +484,7 @@ var main = (function($) { var _ = {
 						$thumbnail.data('index', _.slides.length - 1);
 
 				});
+		});
 
 	},
 
@@ -578,6 +580,7 @@ var main = (function($) { var _ = {
 	 */
 	switchTo: function(index, noHide) {
 
+		console.log(index);
 		// Already at index and xsmall isn't active? Bail.
 			if (_.current == index
 			&&	!skel.breakpoint('xsmall').active)
@@ -848,7 +851,6 @@ var main = (function($) { var _ = {
 		
 		//slide others back up
 		_.$menu_condense(menu_item);
-		_.initViewer();
 	},
 	$menu_condense: function(menu_item){
 			//slide non-selected
