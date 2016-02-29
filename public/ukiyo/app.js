@@ -1,5 +1,3 @@
-(function() {
-    //start of function
-
-  //end of function
-})();
+$(document).ready(function() {
+    $('#fullpage').fullpage();
+});
