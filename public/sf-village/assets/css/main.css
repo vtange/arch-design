@@ -2054,7 +2054,16 @@
 	}
 
 		.features section {
-			padding: 3.5em 3em 1em 7em ;
+			display: -moz-flex;
+			display: -webkit-flex;
+			display: -ms-flex;
+			display: flex;
+			-moz-flex-direction: row;
+			-webkit-flex-direction: row;
+			-ms-flex-direction: row;
+			flex-direction: row;
+			
+			padding: 2em 3em 0em 3em;
 			width: 50%;
 			border-top: solid 1px rgba(255, 255, 255, 0.15);
 			position: relative;
@@ -2081,14 +2090,13 @@
 				-webkit-transform: scale(1);
 				-ms-transform: scale(1);
 				transform: scale(1);
-				position: absolute;
-				left: 3em;
-				top: 3em;
 				opacity: 1;
 				
-				width:6em;
-				height:6em;
-				background-size:cover;
+				width:8em;
+				height:7em;
+				background-color:#fff;
+				padding: 8px;
+				background-size:contain;
 				background-position: center;
 				background-repeat: no-repeat;
 			}
@@ -2238,6 +2246,10 @@
 			-ms-transform: scale(0.5);
 			transform: scale(0.5);
 			opacity: 0;
+		}
+
+		.features section .content {
+			padding-left: 1em;
 		}
 
 		@media screen and (max-width: 980px) {
