@@ -2915,6 +2915,7 @@
 			display: block;
 			position: relative;
 			width: 100%;
+			min-height: 22.5em;
 		}
 
 			.spotlights2 > section > .image img {
@@ -3142,11 +3143,11 @@
 		}
 
 		.wrapper.style1 {
-			background-color: #5e42a6;
+			background-color: #eee;
 		}
 
 		.wrapper.style1-alt {
-			background-color: #493382;
+			background-color: #eee;
 		}
 
 		.wrapper.style2 {
@@ -3154,7 +3155,7 @@
 		}
 
 		.wrapper.style2-alt {
-			background-color: #3e4094;
+			background-color: #ddd;
 		}
 
 		.wrapper.style3 {
