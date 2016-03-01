@@ -3721,3 +3721,14 @@
 #four{
 	min-height: 80vh;
 }
+
+#anim-header{
+	position: absolute;
+	z-index: 9000;
+	
+	background: url('http://res.cloudinary.com/dmj8qtant/image/upload/v1456874250/villageSF_krulxq.png') center no-repeat;
+	background-color: #fff;
+	width:100%;
+	height:100vh;
+	opacity: 0;
+}
