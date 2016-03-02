@@ -38,19 +38,16 @@
 						images: [
 							'http://res.cloudinary.com/dmj8qtant/image/upload/v1456525031/arch/dramal_hizgkd.jpg',
 							'http://res.cloudinary.com/dmj8qtant/image/upload/v1456525027/arch/DSCN2857b_lxaqbe.jpg',
-							'http://res.cloudinary.com/dmj8qtant/image/upload/v1456525089/arch/301_rkpnol.jpg',
+							'http://res.cloudinary.com/dmj8qtant/image/upload/v1456954868/arch/301_wd9jlh.jpg',
 							'http://res.cloudinary.com/dmj8qtant/image/upload/v1456525045/arch/101_mvmc2p.jpg',
 							'http://res.cloudinary.com/dmj8qtant/image/upload/v1456525042/arch/brighterparts1_gbu73p.jpg',
 							'http://res.cloudinary.com/dmj8qtant/image/upload/v1456525091/arch/30001_z3gdfm.jpg'
-						],
-
-					// Delay.
-						delay: 4000
+						]
 
 				};
 
 			// Vars.
-				var	pos = 0, lastPos = 0,
+				var	pos = 0,
 					$wrapper, $bg,
 					k, v;
 
@@ -73,15 +70,24 @@
 					||	!canUse('transition'))
 						return;
 
-				window.setInterval(function() {
+				var nextSlide = function() {
 
-					lastPos = pos;
 					pos = pos+1==settings.images.length ? 0 : pos+1 ;
 					
 					console.log(pos);
+					document.getElementById('background').style.backgroundImage = 'none';
 					document.getElementById('background').style.backgroundImage = 'url("' + settings.images[pos] + '")';
 					
-				}, settings.delay);
+				};
+				var prevSlide = function() {
+
+					pos = pos-1==-1 ? settings.images.length-1 : pos-1 ;
+					
+					console.log(pos);
+					document.getElementById('background').style.backgroundImage = 'none';
+					document.getElementById('background').style.backgroundImage = 'url("' + settings.images[pos] + '")';
+					
+				};
 
 		})();
 /*
