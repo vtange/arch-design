@@ -3688,6 +3688,7 @@
 	}
 		#intro .inner, #intro h1 {
 			text-align: center;
+			transform:translateY(-50%);
 		}
 
 		#intro p {
@@ -3722,21 +3723,40 @@
 	min-height: 80vh;
 }
 
-#anim-header{
+#white-cover{
 	position: absolute;
+	top:0;
 	z-index: 9000;
 	
-	
+	-moz-transition: all 0.5s ease-in-out;
+	-webkit-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
 	background-color: #fff;
 	width:100%;
 	height:100vh;
 }
 #logo {
-	background: url('http://res.cloudinary.com/dmj8qtant/image/upload/v1456874250/villageSF_krulxq.png') center no-repeat;
-	height:100%;
-	-moz-transition: opacity 0.5s ease-in-out;
-	-webkit-transition:opacity 0.5s ease-in-out;
-	-ms-transition: opacity 0.5s ease-in-out;
-	transition: opacity 0.5s ease-in-out;
+	position: absolute;
+    right: 0;
+    left: 0;
+	top:20%;
+    margin: auto;
+	width:50%;
+	
+	box-sizing: content-box;
+	padding: 0% 5% 10px 5%;
+	border-bottom-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+	background-color:#fff;
+	border: 2px solid rgba(255,255,255, 0.5);
+	box-shadow: 0em 0em .25em .25em rgba(255,255,255,0.4);
+	
+	-moz-transition: all 0.5s ease-in-out;
+	-webkit-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
 	opacity: 0;
+	
+	z-index: 9001;
 }

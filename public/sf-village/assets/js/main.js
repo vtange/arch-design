@@ -269,7 +269,11 @@
 			var header = document.getElementById("anim-header");
 			var logo = document.getElementById("logo");
 	
-		window.setTimeout($("#logo").animate({opacity: 1}),1000);
+		$("#logo").animate({opacity: 1}).delay(2000).promise().always(function(){
+			$("#logo").animate({top: 0, width: '200px', height: '100px'}).delay(200).promise().always(function(){
+				$("#white-cover").animate({opacity: 0})
+			})
+		})
 		
 	});
 
