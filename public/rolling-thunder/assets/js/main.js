@@ -45,7 +45,7 @@
 						],
 
 					// Delay.
-						delay: 6000
+						delay: 4000
 
 				};
 
@@ -62,6 +62,7 @@
 					// Create BG.
 			
 						$bg = document.createElement('div');
+						$bg.id = 'background';
 						$bg.style.backgroundImage = 'url("' + settings.images[0] + '")';
 			
 					$wrapper.appendChild($bg);
@@ -76,6 +77,9 @@
 
 					lastPos = pos;
 					pos = pos+1==settings.images.length ? 0 : pos+1 ;
+					
+					console.log(pos);
+					document.getElementById('background').style.backgroundImage = 'url("' + settings.images[pos] + '")';
 					
 				}, settings.delay);
 
