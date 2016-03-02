@@ -149,10 +149,6 @@
 /* BG */
 
 	#bg {
-		-moz-transition: opacity 2s ease-in-out;
-		-webkit-transition: opacity 2s ease-in-out;
-		-ms-transition: opacity 2s ease-in-out;
-		transition: opacity 2s ease-in-out;
 		height: 100%;
 		left: 0;
 		opacity: 0.25;
@@ -170,11 +166,9 @@
 			background-size: cover;
 			height: 100%;
 			left: 0;
-			opacity: 0;
 			position: absolute;
 			top: 0;
-			visibility: hidden;
-			width: 150%;
+			width: 100%;
 		}
 
 			#bg div.visible {

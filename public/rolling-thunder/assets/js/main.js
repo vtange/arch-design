@@ -10,9 +10,6 @@
 
 	// Methods/polyfills.
 
-		// classList | (c) @remy | github.com/remy/polyfills | rem.mit-license.org
-			!function(){function t(t){this.el=t;for(var n=t.className.replace(/^\s+|\s+$/g,"").split(/\s+/),i=0;i<n.length;i++)e.call(this,n[i])}function n(t,n,i){Object.defineProperty?Object.defineProperty(t,n,{get:i}):t.__defineGetter__(n,i)}if(!("undefined"==typeof window.Element||"classList"in document.documentElement)){var i=Array.prototype,e=i.push,s=i.splice,o=i.join;t.prototype={add:function(t){this.contains(t)||(e.call(this,t),this.el.className=this.toString())},contains:function(t){return-1!=this.el.className.indexOf(t)},item:function(t){return this[t]||null},remove:function(t){if(this.contains(t)){for(var n=0;n<this.length&&this[n]!=t;n++);s.call(this,n,1),this.el.className=this.toString()}},toString:function(){return o.call(this," ")},toggle:function(t){return this.contains(t)?this.remove(t):this.add(t),this.contains(t)}},window.DOMTokenList=t,n(Element.prototype,"classList",function(){return new t(this)})}}();
-
 		// canUse
 			window.canUse=function(p){if(!window._canUse)window._canUse=document.createElement("div");var e=window._canUse.style,up=p.charAt(0).toUpperCase()+p.slice(1);return p in e||"Moz"+up in e||"Webkit"+up in e||"O"+up in e||"ms"+up in e};
 
@@ -38,14 +35,14 @@
 				var settings = {
 
 					// Images (in the format of 'url': 'alignment').
-						images: {
-							'http://res.cloudinary.com/dmj8qtant/image/upload/v1456525031/arch/dramal_hizgkd.jpg': 'center',
-							'http://res.cloudinary.com/dmj8qtant/image/upload/v1456525027/arch/DSCN2857b_lxaqbe.jpg': 'center',
-							'http://res.cloudinary.com/dmj8qtant/image/upload/v1456525089/arch/301_rkpnol.jpg': 'center',
-							'http://res.cloudinary.com/dmj8qtant/image/upload/v1456525045/arch/101_mvmc2p.jpg': 'center',
-							'http://res.cloudinary.com/dmj8qtant/image/upload/v1456525042/arch/brighterparts1_gbu73p.jpg': 'center',
-							'http://res.cloudinary.com/dmj8qtant/image/upload/v1456525091/arch/30001_z3gdfm.jpg': 'center'
-						},
+						images: [
+							'http://res.cloudinary.com/dmj8qtant/image/upload/v1456525031/arch/dramal_hizgkd.jpg',
+							'http://res.cloudinary.com/dmj8qtant/image/upload/v1456525027/arch/DSCN2857b_lxaqbe.jpg',
+							'http://res.cloudinary.com/dmj8qtant/image/upload/v1456525089/arch/301_rkpnol.jpg',
+							'http://res.cloudinary.com/dmj8qtant/image/upload/v1456525045/arch/101_mvmc2p.jpg',
+							'http://res.cloudinary.com/dmj8qtant/image/upload/v1456525042/arch/brighterparts1_gbu73p.jpg',
+							'http://res.cloudinary.com/dmj8qtant/image/upload/v1456525091/arch/30001_z3gdfm.jpg'
+						],
 
 					// Delay.
 						delay: 6000
@@ -54,7 +51,7 @@
 
 			// Vars.
 				var	pos = 0, lastPos = 0,
-					$wrapper, $bgs = [], $bg,
+					$wrapper, $bg,
 					k, v;
 
 			// Create BG wrapper, BGs.
@@ -62,47 +59,24 @@
 					$wrapper.id = 'bg';
 					$body.appendChild($wrapper);
 
-				for (k in settings.images) {
-
 					// Create BG.
+			
 						$bg = document.createElement('div');
-							$bg.style.backgroundImage = 'url("' + k + '")';
-							$bg.style.backgroundPosition = settings.images[k];
-							$wrapper.appendChild($bg);
-
-					// Add it to array.
-						$bgs.push($bg);
-
-				}
-
-			// Main loop.
-				$bgs[pos].classList.add('visible');
-				$bgs[pos].classList.add('top');
-
-				// Bail if we only have a single BG or the client doesn't support transitions.
-					if ($bgs.length == 1
+						$bg.style.backgroundImage = 'url("' + settings.images[0] + '")';
+			
+					$wrapper.appendChild($bg);
+				$body.appendChild($wrapper);
+				
+			// Bail if we only have a single BG or the client doesn't support transitions.
+					if (settings.images.length < 2
 					||	!canUse('transition'))
 						return;
 
 				window.setInterval(function() {
 
 					lastPos = pos;
-					pos++;
-
-					// Wrap to beginning if necessary.
-						if (pos >= $bgs.length)
-							pos = 0;
-
-					// Swap top images.
-						$bgs[lastPos].classList.remove('top');
-						$bgs[pos].classList.add('visible');
-						$bgs[pos].classList.add('top');
-
-					// Hide last image after a short delay.
-						window.setTimeout(function() {
-							$bgs[lastPos].classList.remove('visible');
-						}, settings.delay / 2);
-
+					pos = pos+1==settings.images.length ? 0 : pos+1 ;
+					
 				}, settings.delay);
 
 		})();
