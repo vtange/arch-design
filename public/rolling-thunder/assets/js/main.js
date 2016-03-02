@@ -39,9 +39,12 @@
 
 					// Images (in the format of 'url': 'alignment').
 						images: {
-							'images/bg01.jpg': 'center',
-							'images/bg02.jpg': 'center',
-							'images/bg03.jpg': 'center'
+							'http://res.cloudinary.com/dmj8qtant/image/upload/v1456525031/arch/dramal_hizgkd.jpg': 'center',
+							'http://res.cloudinary.com/dmj8qtant/image/upload/v1456525027/arch/DSCN2857b_lxaqbe.jpg': 'center',
+							'http://res.cloudinary.com/dmj8qtant/image/upload/v1456525089/arch/301_rkpnol.jpg': 'center',
+							'http://res.cloudinary.com/dmj8qtant/image/upload/v1456525045/arch/101_mvmc2p.jpg': 'center',
+							'http://res.cloudinary.com/dmj8qtant/image/upload/v1456525042/arch/brighterparts1_gbu73p.jpg': 'center',
+							'http://res.cloudinary.com/dmj8qtant/image/upload/v1456525091/arch/30001_z3gdfm.jpg': 'center'
 						},
 
 					// Delay.
@@ -103,7 +106,7 @@
 				}, settings.delay);
 
 		})();
-
+/*
 	// Signup Form.
 		(function() {
 
@@ -170,5 +173,5 @@
 				});
 
 		})();
-
+*/
 })();
