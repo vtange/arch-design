@@ -265,6 +265,12 @@
 
 				});
 
+		// Initial Animation
+			var header = document.getElementById("anim-header");
+			var logo = document.getElementById("logo");
+	
+		window.setTimeout($("#logo").animate({opacity: 1}),1000);
+		
 	});
 
 })(jQuery);
