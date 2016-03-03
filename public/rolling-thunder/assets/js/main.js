@@ -37,8 +37,8 @@
 
 					// Images (in the format of 'url': 'alignment').
 						images: [
-							'http://res.cloudinary.com/dmj8qtant/image/upload/v1456525031/arch/dramal_hizgkd.jpg',
-							'http://res.cloudinary.com/dmj8qtant/image/upload/v1456525091/arch/30001_z3gdfm.jpg'
+							'http://res.cloudinary.com/dmj8qtant/image/upload/v1456525091/arch/30001_z3gdfm.jpg',
+							'http://res.cloudinary.com/dmj8qtant/image/upload/v1456525031/arch/dramal_hizgkd.jpg'
 						],
 						otherImages: [
 							'http://res.cloudinary.com/dmj8qtant/image/upload/v1456525027/arch/DSCN2857b_lxaqbe.jpg',
@@ -130,20 +130,22 @@
 
 				function nextSlide(element) {
 
-					var arr, temp_pos;
+					var arr, text_arr, temp_pos;
 					
 					//check, Background or BG2?
 					if (element.id === 'background'){
 						arr = settings.images;
+						text_arr = settings.text1;
 						pos = pos+1==arr.length ? 0 : pos+1 ;
 						temp_pos = pos;
-						document.getElementById('day-night')
+						document.getElementById('day-night').innerHTML = text_arr[temp_pos];
 					}
 					else if (element.id === 'bg2'){
 						arr = settings.otherImages;
+						text_arr = settings.text2;
 						pos2 = pos2+1==arr.length ? 0 : pos2+1 ;
 						temp_pos = pos2;
-					}					
+					}
 					else{
 						return;
 					}
@@ -154,19 +156,22 @@
 				};
 				function prevSlide(element) {
 
-					var arr, temp_pos;
+					var arr, text_arr, temp_pos;
 					
 					//check, Background or BG2?
 					if (element.id === 'background'){
 						arr = settings.images;
+						text_arr = settings.text1;
 						pos = pos-1==-1 ? arr.length-1 : pos-1 ;
 						temp_pos = pos;
+						document.getElementById('day-night').innerHTML = text_arr[temp_pos];
 					}
 					else if (element.id === 'bg2'){
 						arr = settings.otherImages;
+						text_arr = settings.text2;
 						pos2 = pos2-1==-1 ? arr.length-1 : pos2-1 ;
 						temp_pos = pos2;
-					}					
+					}
 					else{
 						return;
 					}
