@@ -45,11 +45,21 @@
 							'http://res.cloudinary.com/dmj8qtant/image/upload/v1456954868/arch/301_wd9jlh.jpg',
 							'http://res.cloudinary.com/dmj8qtant/image/upload/v1456525045/arch/101_mvmc2p.jpg',
 							'http://res.cloudinary.com/dmj8qtant/image/upload/v1456525042/arch/brighterparts1_gbu73p.jpg',
+						],
+						text1 : [
+							'Martial Arts Studio by day...',
+							"Nightclub by night."
+						],
+						text2 : [
+							"",
+							"",
+							"",
+							""
 						]
 				};
 
 			// Vars.
-				var	pos = 0,
+				var	pos = 0, pos2 = 0,
 					$wrapper, $bg, $bg2, $next, $next2, $prev, $prev2;
 				var arrows = ['prev1','next1','prev2','next2'];
 
@@ -105,32 +115,64 @@
 			
 			for(var i=0;i<arrows.length;i++){
 			    document.getElementById(arrows[i]).onclick = function(e){
-					console.log(e.target.parentElement.parentElement.id);
-					// if e.target.id = next/prev
-						//nextSlide / prevSlide ->(parentElement)
 					
-					
+					//check, NextSlide or PrevSlide?
+					if (e.target.parentElement.id.search('next')!==-1){
+						nextSlide(e.target.parentElement.parentElement);
+					}
+					if (e.target.parentElement.id.search('prev')!==-1){
+						prevSlide(e.target.parentElement.parentElement);
+					}					
 					
 					return false;
 				}
 			};
 
-				var nextSlide = function() {
-					//if parentelement.id = background / bg2, switch with images/otherimages ,respectively
-					pos = pos+1==settings.images.length ? 0 : pos+1 ;
+				function nextSlide(element) {
+
+					var arr, temp_pos;
 					
-					console.log(pos);
-					document.getElementById('background').style.backgroundImage = 'none';
-					document.getElementById('background').style.backgroundImage = 'url("' + settings.images[pos] + '")';
+					//check, Background or BG2?
+					if (element.id === 'background'){
+						arr = settings.images;
+						pos = pos+1==arr.length ? 0 : pos+1 ;
+						temp_pos = pos;
+						document.getElementById('day-night')
+					}
+					else if (element.id === 'bg2'){
+						arr = settings.otherImages;
+						pos2 = pos2+1==arr.length ? 0 : pos2+1 ;
+						temp_pos = pos2;
+					}					
+					else{
+						return;
+					}
+
+					element.style.backgroundImage = 'none';
+					element.style.backgroundImage = 'url("' + arr[temp_pos] + '")';
 					
 				};
-				var prevSlide = function() {
+				function prevSlide(element) {
 
-					pos = pos-1==-1 ? settings.images.length-1 : pos-1 ;
+					var arr, temp_pos;
 					
-					console.log(pos);
-					document.getElementById('background').style.backgroundImage = 'none';
-					document.getElementById('background').style.backgroundImage = 'url("' + settings.images[pos] + '")';
+					//check, Background or BG2?
+					if (element.id === 'background'){
+						arr = settings.images;
+						pos = pos-1==-1 ? arr.length-1 : pos-1 ;
+						temp_pos = pos;
+					}
+					else if (element.id === 'bg2'){
+						arr = settings.otherImages;
+						pos2 = pos2-1==-1 ? arr.length-1 : pos2-1 ;
+						temp_pos = pos2;
+					}					
+					else{
+						return;
+					}
+
+					element.style.backgroundImage = 'none';
+					element.style.backgroundImage = 'url("' + arr[temp_pos] + '")';
 					
 				};
 
