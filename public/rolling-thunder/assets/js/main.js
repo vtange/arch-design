@@ -37,13 +37,14 @@
 					// Images (in the format of 'url': 'alignment').
 						images: [
 							'http://res.cloudinary.com/dmj8qtant/image/upload/v1456525031/arch/dramal_hizgkd.jpg',
+							'http://res.cloudinary.com/dmj8qtant/image/upload/v1456525091/arch/30001_z3gdfm.jpg'
+						],
+						otherImages: [
 							'http://res.cloudinary.com/dmj8qtant/image/upload/v1456525027/arch/DSCN2857b_lxaqbe.jpg',
 							'http://res.cloudinary.com/dmj8qtant/image/upload/v1456954868/arch/301_wd9jlh.jpg',
 							'http://res.cloudinary.com/dmj8qtant/image/upload/v1456525045/arch/101_mvmc2p.jpg',
 							'http://res.cloudinary.com/dmj8qtant/image/upload/v1456525042/arch/brighterparts1_gbu73p.jpg',
-							'http://res.cloudinary.com/dmj8qtant/image/upload/v1456525091/arch/30001_z3gdfm.jpg'
 						]
-
 				};
 
 			// Vars.
@@ -61,9 +62,10 @@
 						$bg = document.createElement('div');
 						$bg.id = 'background';
 						$bg.style.backgroundImage = 'url("' + settings.images[0] + '")';
+						$bg.innerHTML = document.getElementById('header').outerHTML;
 			
 					$wrapper.appendChild($bg);
-				$body.appendChild($wrapper);
+				$body.insertBefore($wrapper, $body.firstChild);
 				
 			// Bail if we only have a single BG or the client doesn't support transitions.
 					if (settings.images.length < 2
