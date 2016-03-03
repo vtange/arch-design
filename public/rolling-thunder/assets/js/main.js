@@ -18,6 +18,7 @@
 
 	// Vars.
 		var	$body = document.querySelector('body');
+		var	$misc = document.getElementById('misc');
 
 	// Disable animations/transitions until everything's loaded.
 		$body.classList.add('is-loading');
@@ -49,8 +50,8 @@
 
 			// Vars.
 				var	pos = 0,
-					$wrapper, $bg,
-					k, v;
+					$wrapper, $bg, $bg2, $next, $next2, $prev, $prev2;
+				var arrows = ['prev1','next1','prev2','next2'];
 
 			// Create BG wrapper, BGs.
 				$wrapper = document.createElement('div');
@@ -63,14 +64,51 @@
 						$bg.id = 'background';
 						$bg.style.backgroundImage = 'url("' + settings.images[0] + '")';
 						$bg.innerHTML = document.getElementById('header').outerHTML;
+						
+					//Next Arrows
+						$prev = document.createElement('span');
+							$prev.id = 'prev1';
+							$prev.className = 'prev';
+							$prev.innerHTML = '<i class="fa fa-arrow-left"></i>'
+						$bg.appendChild($prev)
+						
+						$next = document.createElement('span');
+							$next.id = 'next1';
+							$next.className = 'next';
+							$next.innerHTML = '<i class="fa fa-arrow-right"></i>'
+						$bg.appendChild($next)
+						
 			
 					$wrapper.appendChild($bg);
 				$body.insertBefore($wrapper, $body.firstChild);
+			
+					// Create BG2.
+					$bg2 = document.createElement('div');
+					$bg2.id = 'bg2';
+					$bg2.style.backgroundImage = 'url("' + settings.otherImages[0] + '")';			
+			
+			//Add Next Arrows too.
+						$prev2 = document.createElement('span');
+							$prev2.id = 'prev2';
+							$prev2.className = 'prev';
+							$prev2.innerHTML = '<i class="fa fa-arrow-left"></i>'
+						$bg2.appendChild($prev2)
+						
+						$next2 = document.createElement('span');
+							$next2.id = 'next2';
+							$next2.className = 'next';
+							$next2.innerHTML = '<i class="fa fa-arrow-right"></i>'
+						$bg2.appendChild($next2)
+			
+				$misc.insertBefore($bg2, $misc.firstChild);
 				
-			// Bail if we only have a single BG or the client doesn't support transitions.
-					if (settings.images.length < 2
-					||	!canUse('transition'))
-						return;
+			
+			for(var i=0;i<arrows.length;i++){
+			    document.getElementById(arrows[i]).onclick = function(e){
+					console.log(e.target.parentElement.parentElement);
+					return false;
+				}
+			};
 
 				var nextSlide = function() {
 
