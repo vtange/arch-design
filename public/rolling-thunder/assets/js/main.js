@@ -105,13 +105,18 @@
 			
 			for(var i=0;i<arrows.length;i++){
 			    document.getElementById(arrows[i]).onclick = function(e){
-					console.log(e.target.parentElement.parentElement);
+					console.log(e.target.parentElement.parentElement.id);
+					// if e.target.id = next/prev
+						//nextSlide / prevSlide ->(parentElement)
+					
+					
+					
 					return false;
 				}
 			};
 
 				var nextSlide = function() {
-
+					//if parentelement.id = background / bg2, switch with images/otherimages ,respectively
 					pos = pos+1==settings.images.length ? 0 : pos+1 ;
 					
 					console.log(pos);
