@@ -4,6 +4,18 @@ showcase for architecture projects https://arch-design.herokuapp.com/
 # Takeaways
 
 [roll-thunder]
+ - Vanilla JS loading screen
+ ```
+ 	// Disable animations/transitions and keep a is-loading circle until everything's loaded.
+		$body.classList.add('is-loading');
+
+		window.addEventListener('load', function() {
+			window.setTimeout(function() {
+				$body.classList.remove('is-loading');
+			}, 100);
+		});
+
+ ```
  - using CSS transitions to animate:
  
  ```
