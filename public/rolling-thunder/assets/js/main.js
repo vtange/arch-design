@@ -190,11 +190,19 @@
 					else{
 						return;
 					}
-
+					fadeOut(element);
 					element.style.backgroundImage = 'none';
 					element.style.backgroundImage = 'url("' + arr[temp_pos] + '")';
-					
+					fadeIn(element);
 				};
+			
+				function fadeIn(el) {
+				  el.style.opacity = 1;
+
+				}
+				function fadeOut(el) {
+				  el.style.opacity = 0;
+				}
 		})();
 /*
 	// Signup Form.
