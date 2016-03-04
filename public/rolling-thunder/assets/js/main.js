@@ -18,7 +18,7 @@
 
 	// Vars.
 		var	$body = document.querySelector('body');
-		var	$misc = document.getElementById('misc');
+		var	$well = document.getElementById('well');
 
 	// Disable animations/transitions until everything's loaded.
 		$body.classList.add('is-loading');
@@ -123,7 +123,7 @@
 							$blk2.className = 'black';
 						$bg2.insertBefore($blk2, $bg2.firstChild);
 			
-				$misc.insertBefore($bg2, $misc.firstChild);
+				$well.insertBefore($bg2, $well.firstChild);
 				
 			
 			for(var i=0;i<arrows.length;i++){
@@ -143,65 +143,67 @@
 
 				function nextSlide(element) {
 
-					var arr, text_arr, temp_pos;
+					var arr, text_el, text_arr, temp_pos;
 					
 					//check, Background or BG2?
 					if (element.id === 'background'){
 						arr = settings.images;
+						text_el = document.getElementById('day-night');
 						text_arr = settings.text1;
 						pos = pos+1==arr.length ? 0 : pos+1 ;
 						temp_pos = pos;
-						document.getElementById('day-night').innerHTML = text_arr[temp_pos];
 					}
 					else if (element.id === 'bg2'){
 						arr = settings.otherImages;
+						text_el = document.getElementById('description');
 						text_arr = settings.text2;
 						pos2 = pos2+1==arr.length ? 0 : pos2+1 ;
 						temp_pos = pos2;
-						document.getElementById('description').innerHTML = text_arr[temp_pos];
 					}
 					else{
 						return;
 					}
-
-					element.style.backgroundImage = 'none';
-					element.style.backgroundImage = 'url("' + arr[temp_pos] + '")';
-					
+					switchOff(element,arr,text_el,text_arr,temp_pos);		
 				};
 				function prevSlide(element) {
 
-					var arr, text_arr, temp_pos;
+					var arr, text_el, text_arr, temp_pos;
 					
 					//check, Background or BG2?
 					if (element.id === 'background'){
 						arr = settings.images;
+						text_el = document.getElementById('day-night');
 						text_arr = settings.text1;
 						pos = pos-1==-1 ? arr.length-1 : pos-1 ;
 						temp_pos = pos;
-						document.getElementById('day-night').innerHTML = text_arr[temp_pos];
+						
 					}
 					else if (element.id === 'bg2'){
 						arr = settings.otherImages;
+						text_el = document.getElementById('description');
 						text_arr = settings.text2;
 						pos2 = pos2-1==-1 ? arr.length-1 : pos2-1 ;
 						temp_pos = pos2;
-						document.getElementById('description').innerHTML = text_arr[temp_pos];
 					}
 					else{
 						return;
 					}
-					fadeOut(element);
-					element.style.backgroundImage = 'none';
-					element.style.backgroundImage = 'url("' + arr[temp_pos] + '")';
-					fadeIn(element);
+					switchOff(element,arr,text_el,text_arr,temp_pos);
 				};
 			
-				function fadeIn(el) {
-				  el.style.opacity = 1;
-
-				}
-				function fadeOut(el) {
-				  el.style.opacity = 0;
+				function switchOff(el,arr,text_el,text_arr,pos) {
+					el.style.opacity = 0;
+					
+					var img = new Image();
+							img.src = arr[pos];
+							img.onload = function(){
+								window.setTimeout(function(){
+									 el.style.backgroundImage = 'none';
+									 el.style.backgroundImage = 'url("' + arr[pos] + '")';
+									 text_el.innerHTML = text_arr[pos];
+									 el.style.opacity = 1;
+								},300);
+							};
 				}
 		})();
 /*
