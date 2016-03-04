@@ -26,15 +26,17 @@ body{
   top:10%;
 }
 .box {
-  width: 400px;
-  padding: 30px;
+  width: 500px;
+  padding: 50px;
   border-radius: 5px;
-  background: rgba(240,230,220, .7);
+  background: rgba(0,0,0, .65);
+  color:#ddd;
   box-shadow: 0 0 8px rgba(0, 0, 0, .7);
 	z-index: 2;
 }
 .box p{
   line-height: 1.35em;
+	letter-spacing: .05em;
 }
 .box h3{
   font-size: 1.35em;
@@ -44,12 +46,12 @@ body{
     margin-top:1.5em;
 }
 #slide1 h1{
-    color: #bbb;
+    color: #ddd;
     font-size:5em;
     text-shadow: 2px 1.5px 1px #000;
 }
 #slide1 h4{
-	color: #bbb;
+	color: #ddd;
     font-size:1.75em;
     text-shadow: 1px 1px 1px #000;
 }
