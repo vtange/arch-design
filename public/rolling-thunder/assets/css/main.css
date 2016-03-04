@@ -104,6 +104,7 @@
 		-webkit-justify-content: center;
 		-ms-justify-content: center;
 		justify-content: center;
+		background-color:#070707;
 	}
 
 		body > * {
@@ -126,7 +127,6 @@
 
 	#bg {
 		height: 56.25vw;
-		opacity: 1;
 		position: relative;
 		width: 100%;
 		left: 0;
@@ -1209,4 +1209,10 @@
 	padding:1em;
 	border-radius:1em;
 	background-color: rgba(255,230,230,0.1);
+}
+#background {
+	opacity: 0;
+	
+	
+	
 }
