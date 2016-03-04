@@ -139,7 +139,7 @@
 	}
 
 	body {
-		background: #242629;
+		background: #141619;
 	}
 
 		body.loading *, body.loading *:before, body.loading *:after {
@@ -1372,7 +1372,6 @@
 /* Header */
 
 	body {
-		padding: 0 0 4em 0;
 	}
 
 	#header {
@@ -1471,7 +1470,6 @@
 	@media screen and (max-width: 736px) {
 
 		body {
-			padding: 4em 0 0 0;
 		}
 
 		#header {
@@ -1514,10 +1512,10 @@
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		-moz-flex-wrap: wrap;
-		-webkit-flex-wrap: wrap;
-		-ms-flex-wrap: wrap;
-		flex-wrap: wrap;
+		flex-direction: column;
+		-moz-flex-direction: column;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
 		-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 	}
 
@@ -1566,6 +1564,7 @@
 				position: absolute;
 				top: 0;
 				width: 100%;
+				opacity:0.65;
 			}
 
 			#main .thumb > h2 {
@@ -1573,8 +1572,8 @@
 				-webkit-pointer-events: none;
 				-ms-pointer-events: none;
 				pointer-events: none;
-				bottom: 1.875em;
-				font-size: 0.8em;
+				bottom: 0.075em;
+				font-size: 2.8em;
 				left: 2.1875em;
 				margin: 0;
 				position: absolute;
@@ -1641,8 +1640,7 @@
 			-ms-transition-delay: 2.525s;
 			transition-delay: 2.525s;
 			height: calc(40vh - 2em);
-			min-height: 20em;
-			width: 25%;
+			width: 100%;
 		}
 
 			#main .thumb:nth-child(1) {
@@ -1736,9 +1734,9 @@
 				-webkit-transition-delay: 2.075s;
 				-ms-transition-delay: 2.075s;
 				transition-delay: 2.075s;
-				height: calc(40vh - 2em);
-				min-height: 20em;
-				width: 33.33333%;
+				height: 25vh;
+				max-height: 25vh;
+				width: 100%;
 			}
 
 				#main .thumb:nth-child(1) {
@@ -1814,8 +1812,7 @@
 				-ms-transition-delay: 1.625s;
 				transition-delay: 1.625s;
 				height: calc(40vh - 2em);
-				min-height: 20em;
-				width: 50%;
+				width: 100%;
 			}
 
 				#main .thumb:nth-child(1) {
@@ -1870,8 +1867,7 @@
 				-ms-transition-delay: 2.075s;
 				transition-delay: 2.075s;
 				height: calc(28.57143vh - 1.33333em);
-				min-height: 18em;
-				width: 50%;
+				width: 100%;
 			}
 
 				#main .thumb:nth-child(1) {
@@ -1947,7 +1943,6 @@
 				-ms-transition-delay: 1.175s;
 				transition-delay: 1.175s;
 				height: calc(40vh - 2em);
-				min-height: 18em;
 				width: 100%;
 			}
 
