@@ -78,7 +78,7 @@
 	}
 
 	html, body {
-		overflow-x: hidden;
+		overflow: hidden;
 		width: 100%;
 	}
 
@@ -126,7 +126,7 @@
 /* BG */
 
 	#bg {
-		height: 56.25vw;
+		height: 100vh;
 		position: relative;
 		width: 100%;
 		left: 0;
@@ -134,29 +134,24 @@
 		
 	}
 	#misc{
-		position:relative;
+		position:absolute;
 		display: flex;
 		flex-direction: row;
+		width:100%;
 		height: 25em;
-		padding-top: 15px;
+		margin-top:-25px;
 		padding: 15px;
 		
 		z-index: 4;
-		background-color: #111;
-		box-shadow: 0em 0em 2.5em 0em black;
-		border-top: 5px ridge rgba(53,18,0,0.5);
+		background-color: rgba(170,170,170,0.4);
+		box-shadow: 0em 1em 2.5em 0em black;
 	}
 	#well{
 		position: relative;
 		width: 50%;
 		height: 100%;
-		border-top: 3px solid #060606;
-		border-left: 3px solid #060606;
-		border-right: 3px inset rgba(53,18,0,0.5);
-		border-bottom: 3px inset rgba(53,18,0,0.5);
-		border-radius: 1em;
-		box-shadow: inset 0em 0em 2.5em 0em black;
 		
+		background-color: #070707;
 		overflow: hidden;
 	}
 	#bg2 {
@@ -1013,6 +1008,7 @@
 /* Header */
 
 	#header h1 {
+		color:#ff0;
 		font-size: 3.25em;
 		margin: 0.55em;
 	}
@@ -1023,6 +1019,12 @@
 		position: absolute;
 		right:0;
 		bottom:0;
+		opacity:0;
+		
+		-moz-transition: all 0.2s ease-in-out;
+		-webkit-transition: all 0.2s ease-in-out;
+		-ms-transition: all 0.2s ease-in-out;
+		transition: all 0.2s ease-in-out;
 	}
 
 	#header a {
