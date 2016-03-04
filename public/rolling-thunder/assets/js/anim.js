@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
 
 var $header = document.getElementById("header");
-var	$bg = document.getElementById('bg');
 var	$misc = document.getElementById('misc');
 var miscDivPosition = 0;
 	
@@ -32,10 +31,15 @@ function MouseWheelHandler(e, delta) {
 }
 	
 function handle(delta) {
-	miscDivPosition += delta * 10;
-    misc.style.webkitTransform = 'translateY('+miscDivPosition+'px)'; 
-    misc.style.mozTransform    = 'translateY('+miscDivPosition+'px)'; 
-    misc.style.transform       = 'translateY('+miscDivPosition+'px)'; 
+	if (delta > 0){
+			miscDivPosition = 0;
+	}
+	else{
+			miscDivPosition = -165;
+	}
+    misc.style.webkitTransform = 'translateY('+miscDivPosition+'%)'; 
+    misc.style.mozTransform    = 'translateY('+miscDivPosition+'%)'; 
+    misc.style.transform       = 'translateY('+miscDivPosition+'%)'; 
 }
 	
 window.setTimeout(function(){
@@ -48,11 +52,11 @@ window.setTimeout(function(){
 	},500);
 },500);
 
-if ($bg.addEventListener) {
+if (document.body.addEventListener) {
 	// IE9, Chrome, Safari, Opera
-	$bg.addEventListener("mousewheel", MouseWheelHandler, false);
+	document.body.addEventListener("mousewheel", MouseWheelHandler, false);
 	// Firefox
-	$bg.addEventListener("DOMMouseScroll", MouseWheelHandler, false);
+	document.body.addEventListener("DOMMouseScroll", MouseWheelHandler, false);
 }
 	
 });
