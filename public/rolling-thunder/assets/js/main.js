@@ -92,7 +92,7 @@
 						$blk = document.createElement('span');
 							$blk.id = 'blk1';
 							$blk.className = 'black';
-						$bg.appendChild($blk);
+						$bg.insertBefore($blk, $bg.firstChild);
 						
 			
 					$wrapper.appendChild($bg);
@@ -121,7 +121,7 @@
 						$blk2 = document.createElement('span');
 							$blk2.id = 'blk2';
 							$blk2.className = 'black';
-						$bg.appendChild($blk2);
+						$bg2.insertBefore($blk2, $bg2.firstChild);
 			
 				$misc.insertBefore($bg2, $misc.firstChild);
 				
