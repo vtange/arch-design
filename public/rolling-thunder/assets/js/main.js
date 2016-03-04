@@ -67,7 +67,7 @@
 				$wrapper = document.createElement('div');
 					$wrapper.id = 'bg';
 					$body.appendChild($wrapper);
-
+			//////////
 					// Create BG.
 			
 						$bg = document.createElement('div');
@@ -80,34 +80,48 @@
 							$prev.id = 'prev1';
 							$prev.className = 'prev';
 							$prev.innerHTML = '<i class="fa fa-arrow-left"></i>'
-						$bg.appendChild($prev)
+						$bg.appendChild($prev);
 						
 						$next = document.createElement('span');
 							$next.id = 'next1';
 							$next.className = 'next';
 							$next.innerHTML = '<i class="fa fa-arrow-right"></i>'
-						$bg.appendChild($next)
+						$bg.appendChild($next);
+						
+					//Black cycler
+						$blk = document.createElement('span');
+							$blk.id = 'blk1';
+							$blk.className = 'black';
+						$bg.appendChild($blk);
+						
 			
 					$wrapper.appendChild($bg);
 				$body.insertBefore($wrapper, $body.firstChild);
 			
 					// Create BG2.
-					$bg2 = document.createElement('div');
-					$bg2.id = 'bg2';
-					$bg2.style.backgroundImage = 'url("' + settings.otherImages[0] + '")';			
 			
-			//Add Next Arrows too.
+						$bg2 = document.createElement('div');
+						$bg2.id = 'bg2';
+						$bg2.style.backgroundImage = 'url("' + settings.otherImages[0] + '")';			
+			
+					//Add Next Arrows too.
 						$prev2 = document.createElement('span');
 							$prev2.id = 'prev2';
 							$prev2.className = 'prev';
 							$prev2.innerHTML = '<i class="fa fa-arrow-left"></i>'
-						$bg2.appendChild($prev2)
+						$bg2.appendChild($prev2);
 						
 						$next2 = document.createElement('span');
 							$next2.id = 'next2';
 							$next2.className = 'next';
 							$next2.innerHTML = '<i class="fa fa-arrow-right"></i>'
-						$bg2.appendChild($next2)
+						$bg2.appendChild($next2);
+						
+					//Black cycler
+						$blk2 = document.createElement('span');
+							$blk2.id = 'blk2';
+							$blk2.className = 'black';
+						$bg.appendChild($blk2);
 			
 				$misc.insertBefore($bg2, $misc.firstChild);
 				
