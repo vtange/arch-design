@@ -51,7 +51,7 @@
 							"Nightclub by night."
 						],
 						text2 : [
-							"",
+							"Lorem ipsum vallum",
 							"",
 							"",
 							""
@@ -60,7 +60,7 @@
 
 			// Vars.
 				var	pos = 0, pos2 = 0,
-					$wrapper, $bg, $bg2, $next, $next2, $prev, $prev2;
+					$wrapper, $bg, $bg2, $next, $next2, $prev, $prev2, $blk, $blk2;
 				var arrows = ['prev1','next1','prev2','next2'];
 
 			// Create BG wrapper, BGs.
@@ -87,7 +87,6 @@
 							$next.className = 'next';
 							$next.innerHTML = '<i class="fa fa-arrow-right"></i>'
 						$bg.appendChild($next)
-						
 			
 					$wrapper.appendChild($bg);
 				$body.insertBefore($wrapper, $body.firstChild);
@@ -145,6 +144,7 @@
 						text_arr = settings.text2;
 						pos2 = pos2+1==arr.length ? 0 : pos2+1 ;
 						temp_pos = pos2;
+						document.getElementById('description').innerHTML = text_arr[temp_pos];
 					}
 					else{
 						return;
@@ -171,6 +171,7 @@
 						text_arr = settings.text2;
 						pos2 = pos2-1==-1 ? arr.length-1 : pos2-1 ;
 						temp_pos = pos2;
+						document.getElementById('description').innerHTML = text_arr[temp_pos];
 					}
 					else{
 						return;
@@ -180,7 +181,6 @@
 					element.style.backgroundImage = 'url("' + arr[temp_pos] + '")';
 					
 				};
-
 		})();
 /*
 	// Signup Form.
