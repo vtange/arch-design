@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 var $header = document.getElementById("header");
 var	$bg = document.getElementById('bg');
+var	$misc = document.getElementById('misc');
 var miscDivPosition = 0;
 	
 function fadeIn(el) {
@@ -31,12 +32,10 @@ function MouseWheelHandler(e, delta) {
 }
 	
 function handle(delta) {
-	if (delta < 0){
-		console.log(delta);
-	}
-	else{
-		console.log(delta);
-	}
+	miscDivPosition += delta * 10;
+    misc.style.webkitTransform = 'translateY('+miscDivPosition+'px)'; 
+    misc.style.mozTransform    = 'translateY('+miscDivPosition+'px)'; 
+    misc.style.transform       = 'translateY('+miscDivPosition+'px)'; 
 }
 	
 window.setTimeout(function(){
