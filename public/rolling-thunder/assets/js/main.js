@@ -62,7 +62,7 @@
 
 			// Vars.
 				var	pos = 0, pos2 = 0,
-					$wrapper, $bg, $bg2, $next, $next2, $prev, $prev2, $blk, $blk2;
+					$wrapper, $bg, $bg2, $next, $next2, $prev, $prev2;
 				var arrows = ['prev1','next1','prev2','next2'];
 
 			// Create BG wrapper, BGs.
@@ -89,14 +89,7 @@
 							$next.className = 'next';
 							$next.innerHTML = '<i class="fa fa-arrow-right"></i>'
 						$bg.appendChild($next);
-						
-					//Black cycler
-						$blk = document.createElement('span');
-							$blk.id = 'blk1';
-							$blk.className = 'black';
-						$bg.insertBefore($blk, $bg.firstChild);
-						
-			
+
 					$wrapper.appendChild($bg);
 				$body.insertBefore($wrapper, $body.firstChild);
 			
@@ -118,13 +111,7 @@
 							$next2.className = 'next';
 							$next2.innerHTML = '<i class="fa fa-arrow-right"></i>'
 						$bg2.appendChild($next2);
-						
-					//Black cycler
-						$blk2 = document.createElement('span');
-							$blk2.id = 'blk2';
-							$blk2.className = 'black';
-						$bg2.insertBefore($blk2, $bg2.firstChild);
-			
+
 				$well.insertBefore($bg2, $well.firstChild);
 				
 			
