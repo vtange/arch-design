@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 var $header = document.getElementById("header");
 var	$bg = document.getElementById('bg');
+var miscDivPosition = 0;
 	
 function fadeIn(el) {
  if (!el.style){
@@ -11,11 +12,31 @@ function fadeIn(el) {
  	 el.style.opacity = 1;
  }
 }
-function MouseWheelHandler(e) {
+function MouseWheelHandler(e, delta) {
 
 	// cross-browser wheel delta
 	var e = window.event || e; // old IE support
-	console.log(e);
+	var delta = 0;
+	if (e.wheelDelta) {
+		delta = e.wheelDelta/120; 
+	} else if (e.detail) {
+		delta = -e.detail/3;
+	}
+	if (delta)
+		handle(delta);
+        if (e.preventDefault)
+                e.preventDefault();
+        e.returnValue = false;
+	
+}
+	
+function handle(delta) {
+	if (delta < 0){
+		console.log(delta);
+	}
+	else{
+		console.log(delta);
+	}
 }
 	
 window.setTimeout(function(){

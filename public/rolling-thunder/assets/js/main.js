@@ -20,7 +20,7 @@
 		var	$body = document.querySelector('body');
 		var	$well = document.getElementById('well');
 
-	// Disable animations/transitions until everything's loaded.
+	// Disable animations/transitions and keep a is-loading circle until everything's loaded.
 		$body.classList.add('is-loading');
 
 		window.addEventListener('load', function() {
