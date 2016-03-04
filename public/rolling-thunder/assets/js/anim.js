@@ -35,7 +35,7 @@ function handle(delta) {
 			miscDivPosition = 0;
 	}
 	else{
-			miscDivPosition = -165;
+			miscDivPosition = -150;
 	}
     misc.style.webkitTransform = 'translateY('+miscDivPosition+'%)'; 
     misc.style.mozTransform    = 'translateY('+miscDivPosition+'%)'; 
