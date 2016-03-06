@@ -583,7 +583,6 @@ var main = (function($) { var _ = {
 	 */
 	switchTo: function(index, noHide) {
 
-		console.log(index);
 		// Already at index and xsmall isn't active? Bail.
 			if (_.current == index
 			&&	!skel.breakpoint('xsmall').active)
@@ -638,7 +637,7 @@ var main = (function($) { var _ = {
 					// Attach new slide.
 					//	newSlide.$slide.appendTo(_.$viewer);
 						$('#viewer').css('background-image', 'url(' + newSlide.url + ')');
-						document.getElementById('capt').innerHTML = newSlide.$slideCaption.prevObject[0].innerText;
+						document.getElementById('capt').innerHTML = newSlide.$slide.children()[0].innerHTML;
 					// New slide not yet loaded?
 						if (!newSlide.loaded) {
 								// Wait for it to load.
