@@ -53,10 +53,10 @@
 							"Nightclub by night."
 						],
 						text2 : [
-							"Lorem ipsum vallum",
-							"",
-							"",
-							""
+							"The building features a modern-style design with larger-than-life building elements that have clear geometrical dimensions, and a balancing act of varying transparencies, color and light.<br><br> A major element is the light-filtering sunroof on the top of the building. Inspired by the light, orderly forms that are a common theme in works by renowned architect Renzo Piano, the daylight filter stretched across the whole roof, preparing rays of light for further diffusal below.",
+							"The daylighting filter acts as an even, shading canopy for the building, ensuring that areas below are not subject to direct sunlight. This allows spaces such as the southern balcony to function during daylight hours, providing a scenic and comfortable area for clients to practice and host martial arts activities. Interior spaces see light even more evenly diffused via a white translucent ceiling.",
+							"The view of the ocean towards the south was a key element in the design of the overall structure. Here the bedroom of the client is placed southwards, positioned for an optimal seaside view.",
+							"The recording studio, built into the client's residence towards the back of the building, also has a view out toward the sea. <br><br>More importantly, one could also look downward from the studio into the nightclub space below. This enables the client to connect with the nightclub's customers while they tune into his music."
 						]
 				};
 
