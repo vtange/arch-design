@@ -84,8 +84,8 @@ function handle(delta) {
  
  [sf-res]
  
-  - A "Close everything else" Animation
-  - 
+- A "Close everything else" Animation
+  
  ```
   	$menu_condense: function(menu_item){
 			//slide non-selected
