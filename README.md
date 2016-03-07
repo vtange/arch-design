@@ -70,3 +70,14 @@ function handle(delta) {
     misc.style.transform       = 'translateY('+miscDivPosition+'%)'; 
 }
 	```
+
+[sf-village]
+ - Chaining animations via JQuery (Logo, logo scale, and show bg)
+ ```
+ 		$("#logo").animate({opacity: 1}).delay(2000).promise().always(function(){
+			$("#logo").animate({top: 0, width: '200px', height: '100px'}).delay(200).promise().always(function(){
+				$("#white-cover").animate({opacity: 0})
+			})
+		})
+ ```
+ 
