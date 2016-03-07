@@ -73,6 +73,7 @@ function handle(delta) {
 
 [sf-village]
  - Chaining animations via JQuery (Logo, logo scale, and show bg)
+
  ```
  		$("#logo").animate({opacity: 1}).delay(2000).promise().always(function(){
 			$("#logo").animate({top: 0, width: '200px', height: '100px'}).delay(200).promise().always(function(){
@@ -81,3 +82,20 @@ function handle(delta) {
 		})
  ```
  
+ [sf-res]
+ 
+  - A "Close everything else" Animation
+  - 
+ ```
+  	$menu_condense: function(menu_item){
+			//slide non-selected
+			_.menuThumbs.filter(function(item){
+				return item !== _.menuThumbs[_.menuOptions.indexOf(menu_item)];
+			}).forEach(function(element){
+				$(element).animate({ opacity: 0 }).promise().always(function(){
+					//after fade thumbnails out, slide parent up
+					$(element).parent().slideUp('fast');
+				});;
+			})
+	}
+	```
