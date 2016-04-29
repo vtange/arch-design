@@ -18,8 +18,9 @@ showcase for architecture projects https://arch-design.herokuapp.com/
 		-ms-transition: all 0.25s ease-in-out;
 		transition: all 0.25s ease-in-out;
  ```
+
 #### JS
-[roll-thunder]
+###### [roll-thunder]
  - Vanilla JS loading screen
  ```
  	// Disable animations/transitions and keep a is-loading circle until everything's loaded.
@@ -77,7 +78,7 @@ function handle(delta) {
 }
 	```
 
-[sf-village]
+###### [sf-village]
  - Chaining animations via JQuery (Logo, logo scale, and show bg)
 
  ```
@@ -88,7 +89,7 @@ function handle(delta) {
 		})
  ```
  
- [sf-res]
+###### [sf-res]
  
 - A "Close everything else" Animation
   
