@@ -3,8 +3,10 @@
 showcase for architecture projects https://arch-design.herokuapp.com/
 
 ## Tech
+Jquery, PlainJS
 
 ## Niceties
+Parallax, Jquery Promise Animations, PlainJS Jquery elements / events / methods organization, Slideshows, <img> to div background
 
 ### Details
 #### CSS
