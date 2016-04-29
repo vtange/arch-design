@@ -1,8 +1,24 @@
+![alt tag](http://res.cloudinary.com/dmj8qtant/image/upload/c_limit,w_600/v1457484053/ftxrst42nebekzhunr2d.jpg)
 # arch-design
 showcase for architecture projects https://arch-design.herokuapp.com/
 
-# Takeaways
+## Tech
 
+## Niceties
+
+### Details
+#### CSS
+ - using CSS transitions to animate:
+ 
+ ```
+ 	el.style.opacity = 0; //no need for timer, use:
+ 	
+ 		-moz-transition: all 0.25s ease-in-out;
+		-webkit-transition: all 0.25s ease-in-out;
+		-ms-transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
+ ```
+#### JS
 [roll-thunder]
  - Vanilla JS loading screen
  ```
@@ -16,20 +32,10 @@ showcase for architecture projects https://arch-design.herokuapp.com/
 		});
 
  ```
- - using CSS transitions to animate:
- 
- ```
- 	el.style.opacity = 0; //no need for timer, use:
- 	
- 		-moz-transition: all 0.25s ease-in-out;
-		-webkit-transition: all 0.25s ease-in-out;
-		-ms-transition: all 0.25s ease-in-out;
-		transition: all 0.25s ease-in-out;
- ```
  - Vanilla JS 'prependChild'
  
  ```
- 					$wrapper.appendChild($bg);
+ 				  $wrapper.appendChild($bg);
 				  $body.insertBefore($wrapper, $body.firstChild);  //works like prepend
  ```
  - Vanilla JS Mousewheel events and CSS Transforms
