@@ -1,6 +1,6 @@
 ![alt tag](http://res.cloudinary.com/dmj8qtant/image/upload/c_limit,w_600/v1457484053/ftxrst42nebekzhunr2d.jpg)
 # arch-design
-showcase for architecture projects https://arch-design.herokuapp.com/
+showcase for architecture projects
 
 ## Tech
 Jquery, PlainJS
