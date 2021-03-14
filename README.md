@@ -1,4 +1,3 @@
-![alt tag](http://res.cloudinary.com/dmj8qtant/image/upload/c_limit,w_600/v1457484053/2016_apps/ftxrst42nebekzhunr2d.jpg)
 # arch-design
 showcase for architecture projects
 
